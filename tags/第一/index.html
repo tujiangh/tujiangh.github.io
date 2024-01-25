@@ -20,8 +20,8 @@
   
     <meta name="description" content="图酱的老粉的个人博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="酱粉的小窝">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:title" content="标签 - 第一">
+<meta property="og:url" content="http://example.com/tags/%E7%AC%AC%E4%B8%80/index.html">
 <meta property="og:site_name" content="酱粉的小窝">
 <meta property="og:description" content="图酱的老粉的个人博客">
 <meta property="og:locale" content="zh_CN">
@@ -33,7 +33,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>酱粉的小窝</title>
+  <title>标签 - 第一 - 酱粉的小窝</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -87,7 +87,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 100vh;">
+<div class="header-inner" style="height: 80vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -217,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="欢迎来到酱粉的博客"></span>
+            <span id="subtitle" data-typed-text="标签 - 第一"></span>
           
         </div>
 
@@ -241,86 +241,28 @@
     
       <div class="container nopadding-x-md">
         <div id="board"
-          style="margin-top: 0">
+          >
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-
-  <div class="row mx-auto index-card">
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+  
     
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/01/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" target="_self">
-          我的第一篇文章
-        </a>
-      </h2>
-
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/01/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" target="_self">
-        <div>
-          这是我的第一篇文章，想了半天，也不知道写些什么好，所以，就当是胡说八道吧。我是一个初中牲，平时喜欢听听歌，看看动漫，不是很喜欢体育运动，偶尔闲着没事还会敲敲代码，在电脑上码码字。   大概两周前我们放了寒假，回来以后就无所事事，每天脑子空空的，除了吃就是睡，这样浑浑噩噩过了5天多，我突然热血沸腾，想着不能虚度光阴，写作业是肯定不可能的，于是我就想起了做一个博客，当时头脑一热，开始在网上去搜索
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-01-25 18:02" pubdate>
-              2024-01-25
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%AC%AC%E4%B8%80/">#第一</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
+      <p class="h5">2024</p>
     
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/01/23/hello-world/" target="_self">
-          Hello World
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/01/23/hello-world/" target="_self">
-        <div>
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-01-23 18:22" pubdate>
-              2024-01-23
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
+    <a href="/2024/01/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="list-group-item list-group-item-action">
+      <time>01-25</time>
+      <div class="list-group-item-title">我的第一篇文章</div>
+    </a>
+  
+</div>
 
 
 
@@ -434,37 +376,7 @@
       }
       var text = subtitle.getAttribute('data-typed-text');
       
-        jQuery.ajax({
-          type: 'GET',
-          url: 'https://v1.hitokoto.cn/',
-          headers: {},
-          dataType: 'json',
-          success: function(result) {
-            var apiText;
-            if (result) {
-              var keys = 'hitokoto'.split(',');
-              if (result instanceof Array) {
-                result = result[0];
-              }
-              for (const k of keys) {
-                var value = result[k];
-                if (typeof value === 'string') {
-                  apiText = value;
-                  break;
-                } else if (value instanceof Object) {
-                  result = value;
-                }
-              }
-            }
-            apiText ? typing(apiText) : typing(text);
-          },
-          error: function(xhr, status, error) {
-            if (error) {
-              console.error('Failed to request https://v1.hitokoto.cn/:', error);
-            }
-            typing(text);
-          }
-        })
+        typing(text);
       
     })(window, document);
   </script>
