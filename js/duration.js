@@ -1,31 +1,20 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>!(function() {
-  /** 计时起始时间，自行修改 **/
-  var start = new Date("2024/01/22 20:38:27");
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>// 设置网站启动时间
+var startTime = new Date("2024-01-22T20:38:26Z");
 
-  function update() {
-    var now = new Date();
-    now.setTime(now.getTime()+250);
-    days = (now - start) / 1000 / 60 / 60 / 24;
-    dnum = Math.floor(days);
-    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);
-    hnum = Math.floor(hours);
-    if(String(hnum).length === 1 ){
-      hnum = "0" + hnum;
-    }
-    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-    mnum = Math.floor(minutes);
-    if(String(mnum).length === 1 ){
-      mnum = "0" + mnum;
-    }
-    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-    snum = Math.round(seconds);
-    if(String(snum).length === 1 ){
-      snum = "0" + snum;
-    }
-    document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
-    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
-  }
+function updateUptime() {
+    var currentTime = new Date();
+    var uptimeMilliseconds = currentTime - startTime;
 
-  update();
-  setInterval(update, 1000);
-})();
+    var days = Math.floor(uptimeMilliseconds / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((uptimeMilliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((uptimeMilliseconds % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((uptimeMilliseconds % (1000 * 60)) / 1000);
+
+    document.getElementById("uptime").innerText = "本站已运行：" + days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
+}
+
+// 页面加载时更新运行时间
+updateUptime();
+
+// 每秒更新一次
+setInterval(updateUptime, 1000);
