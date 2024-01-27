@@ -1,6 +1,6 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>!(function() {
+!(function() {
   /** 计时起始时间，自行修改 **/
-  var start = new Date("2024/01/22 20:38:27");
+  var start = new Date("2024/01/21 20:37:43");
 
   function update() {
     var now = new Date();
