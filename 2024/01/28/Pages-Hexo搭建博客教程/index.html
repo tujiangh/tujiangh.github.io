@@ -26,7 +26,7 @@
 <meta property="og:description" content="&amp;emsp;&amp;emsp;废话不多说，直接上教程： 一：环境和工具准备：1.系统：Windows102.Node js3.Git4.hexo5.文本编辑器（这里推荐Sublime Text）一个Github账号 二.Node js的安装：1.打开Node官网，下载Node js安装程序，下载地址：https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F;2.下载后安装，安装目录尽量默认，除非你对">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-28T04:41:43.000Z">
-<meta property="article:modified_time" content="2024-01-28T07:43:23.553Z">
+<meta property="article:modified_time" content="2024-06-23T08:12:04.098Z">
 <meta property="article:author" content="图酱的老粉">
 <meta property="article:tag" content="Hexo博客教程">
 <meta name="twitter:card" content="summary_large_image">
@@ -321,35 +321,29 @@
 <p>四.安装Hexo：<br>1.右键Git Bash输入如下命令安装：npm install -g hexo-cli<br>2.安装完后输入hexo -v验证，出现版本号即代表成功。</p>
 <p>五.Github与仓库的创建<br>1.进入官网：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a><br>2.点击右上角Sign up进行注册：<br>3.填写自己的邮箱、密码、用户名等信息，然后用邮箱验证即可完成。<br>4.注册完成后，点击右上角+按钮，选择New repository，创建一个名称为用户名.github.io<br>的仓库。</p>
 <p>注意：1.名称必须为你的用户名.github.io,不然会404<br>&emsp;&emsp;2.Description：为描述仓库。（选填）<br>&emsp;&emsp;3.勾选 Initialize this repository with a README 初始化一个 README.md文件。<br>&emsp;&emsp;4.点击 Creat repository 进行创建。</p>
-<p>六.环境配置：<br>1.配置用户名和邮箱：<br>git config –global user.name “你的用户名”<br>git config –global user.email “你的邮箱”<br>2.通过git config -l检查是否配置成功，现在git安装及配置全部完成。</p>
-<p>七.连接至Github：<br>1.执行以下命令生成ssh公钥，它用于你的计算机连接Github。<br>ssh-keygen -t rsa -C “你的邮箱”</p>
+<p>六.环境配置：<br>1.配置用户名和邮箱：<br><code>git config --global user.name &quot;你的用户名&quot; git config --global user.email &quot;你的邮箱&quot;</code><br>2.通过 <code>git config -l</code>检查是否配置成功，现在git安装及配置全部完成。</p>
+<p>七.连接至Github：<br>1.执行以下命令生成ssh公钥，它用于你的计算机连接Github。<br><code>ssh-keygen -t rsa -C &quot;你的邮箱&quot;</code></p>
 <p>生成之后打开C盘用户文件夹下的.ssh文件夹，有一个名为id_rsa.pub的文件，用记事本打开<br>复制里面所有内容，然后开始在github中配置ssh密钥。</p>
 <p>2.将 SSH KEY 配置到 GitHub<br>进入Github，点击右上角头像，选择settings，进入设置后选择 SSH and GPG keys，<br>名字尽量写英文的，把刚才复制的公钥填到 Key 那一栏。完成后保存。</p>
-<p>3.测试连接，输入以下命令：ssh -T <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a><br>出现连接到账户的提示信息，说明大功告成，现在完成了环境准备工作。</p>
-<p>八.初始化Hexo项目<br>1.在你想放博客文件的路径打开GBH，执行下列命令初始化项目。（把blog后面的东西删掉）</p>
-<p>hexo init blog(项目名)</p>
-<p>2.进入blog文件夹，再次右键GBH，输入npm i安装相关依赖。</p>
+<p>3.测试连接，输入以下命令：<br><code>ssh -T git@github.com</code><br>出现连接到账户的提示信息，说明大功告成，现在完成了环境准备工作。</p>
+<p>八.初始化Hexo项目<br>1.在你想放博客文件的路径打开GBH，执行下列命令初始化项目。（把blog后面的东西删掉）<br><code>hexo init blog(项目名)</code><br>2.进入blog文件夹，再次右键GBH，输入 <code>npm i</code>安装相关依赖。</p>
 <p>3.安装完成后，blog文件夹内有如下结构：<br>【node_modules】：依赖包<br>【scaffolds】：生成文章的一些模板<br>【source】：用来存放你的文章<br>【themes】：主题<br>【.npmignore】：发布时忽略的文件（可忽略）<br>【_config.landscape.yml】：主题的配置文件<br>【config.yml】：博客的配置文件<br>【package.json】：项目名称、描述、版本、运行和开发等信息</p>
 <p>4.输入hexo s启动项目</p>
 <p>5.打开浏览器，输入他给出的链接：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a><br>看到如下效果代表博客构建成功。<br>！<a target="_blank" rel="noopener" href="https://bu.dusays.com/2022/05/26/628e5423df640.webp">博客</a></p>
-<p>九.更换主题（这里我以我使用的Fluid主题为例）<br>&emsp;注：以下步骤摘自Fluid官网：<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a><br>1.安装主题<br>进入博客文件夹执行以下命令安装主题：npm install –save hexo-theme-fluid</p>
-<p>然后在博客目录下创建 _config.fluid.yml，将主题的 _config.yml 内容复制进去。<br>下载链接：<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml">https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml</a><br>(进不去的挂魔法)<br>2.指定主题<br>theme: fluid  # 指定主题</p>
-<p>language: zh-CN  # 指定语言，会影响主题显示的语言，按需修改<br>3.创建「关于页」：输入如下命令：<br>hexo new page about<br>创建成功后，编辑博客目录下 &#x2F;source&#x2F;about&#x2F;index.md，添加 layout 属性。<br>修改完成后的文件示例如下：</p>
-<hr>
-<h2 id="title-aboutdate-2024-01-28-15-20-33layout-about"><a href="#title-aboutdate-2024-01-28-15-20-33layout-about" class="headerlink" title="title: aboutdate: 2024-01-28 15:20:33layout: about"></a>title: about<br>date: 2024-01-28 15:20:33<br>layout: about</h2><p>这里写关于页的正文，支持 Markdown, HTML</p>
-<p>本地启动项目:<br>输入命令：hexo g -d<br>&emsp;hexo s</p>
+<h2 id="九-更换主题（这里我以我使用的Fluid主题为例）-emsp-注：以下步骤摘自Fluid官网：https-github-com-fluid-dev-hexo-theme-fluid1-安装主题进入博客文件夹执行以下命令安装主题：npm-install-save-hexo-theme-fluid然后在博客目录下创建-config-fluid-yml，将主题的-config-yml-内容复制进去。下载链接：https-github-com-fluid-dev-hexo-theme-fluid-blob-master-config-yml-进不去的挂魔法-2-指定主题theme-fluid-指定主题-language-zh-CN-指定语言，会影响主题显示的语言，按需修改3-创建「关于页」：输入如下命令：hexo-new-page-about创建成功后，编辑博客目录下-source-about-index-md，添加-layout-属性。修改完成后的文件示例如下："><a href="#九-更换主题（这里我以我使用的Fluid主题为例）-emsp-注：以下步骤摘自Fluid官网：https-github-com-fluid-dev-hexo-theme-fluid1-安装主题进入博客文件夹执行以下命令安装主题：npm-install-save-hexo-theme-fluid然后在博客目录下创建-config-fluid-yml，将主题的-config-yml-内容复制进去。下载链接：https-github-com-fluid-dev-hexo-theme-fluid-blob-master-config-yml-进不去的挂魔法-2-指定主题theme-fluid-指定主题-language-zh-CN-指定语言，会影响主题显示的语言，按需修改3-创建「关于页」：输入如下命令：hexo-new-page-about创建成功后，编辑博客目录下-source-about-index-md，添加-layout-属性。修改完成后的文件示例如下：" class="headerlink" title="九.更换主题（这里我以我使用的Fluid主题为例）&emsp;注：以下步骤摘自Fluid官网：https://github.com/fluid-dev/hexo-theme-fluid1.安装主题进入博客文件夹执行以下命令安装主题：npm install --save hexo-theme-fluid然后在博客目录下创建 _config.fluid.yml，将主题的 _config.yml 内容复制进去。下载链接：https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml(进不去的挂魔法)2.指定主题theme: fluid  # 指定主题 language: zh-CN  # 指定语言，会影响主题显示的语言，按需修改3.创建「关于页」：输入如下命令：hexo new page about创建成功后，编辑博客目录下 &#x2F;source&#x2F;about&#x2F;index.md，添加 layout 属性。修改完成后的文件示例如下：&#96;"></a>九.更换主题（这里我以我使用的Fluid主题为例）<br>&emsp;注：以下步骤摘自Fluid官网：<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a><br>1.安装主题<br>进入博客文件夹执行以下命令安装主题：<br><code>npm install --save hexo-theme-fluid</code><br>然后在博客目录下创建 _config.fluid.yml，将主题的 _config.yml 内容复制进去。<br>下载链接：<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml">https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml</a><br>(进不去的挂魔法)<br>2.指定主题<br><code>theme: fluid  # 指定主题 language: zh-CN  # 指定语言，会影响主题显示的语言，按需修改</code><br>3.创建「关于页」：输入如下命令：<br>hexo new page about<br>创建成功后，编辑博客目录下 &#x2F;source&#x2F;about&#x2F;index.md，添加 layout 属性。<br>修改完成后的文件示例如下：<br>&#96;</h2><h2 id="title-aboutdate-2024-01-28-15-20-33layout-about"><a href="#title-aboutdate-2024-01-28-15-20-33layout-about" class="headerlink" title="title: aboutdate: 2024-01-28 15:20:33layout: about"></a>title: about<br>date: 2024-01-28 15:20:33<br>layout: about</h2><p>这里写关于页的正文，支持 Markdown, HTML<br>&#96;<br>本地启动项目:<br>输入命令：hexo g -d<br>&emsp;hexo s</p>
 <p>浏览器输入：<a href="http://localhost:4000，">http://localhost:4000，</a><br>即可看到Fluid主题页面</p>
 <p>十.页面个性化</p>
 <ol>
-<li>浏览器tab页名称<br>修改根目录下 _config.yml 中的 title 字段。<br>subtitle为副标题<br>description为首页左上角的字段<br>keywords关键词，可不填写<br>author博客所有者<br>language语言，中国大陆使用zh-CN<br>timezone不用填写</li>
+<li>浏览器tab页名称<br>修改根目录下 _config.yml 中的 title 字段。<br>subtitle为副标题<br>description不用填写<br>keywords关键词，可不填写<br>author博客所有者<br>language语言，中国大陆使用zh-CN<br>timezone不用填写</li>
 </ol>
-<p>2.博客标题<br>blog目录下_config.fluid.yml中的blog_title 字段。</p>
+<p>2.博客导航栏左侧文字<br>blog目录下_config.fluid.yml中的blog_title 字段。</p>
 <p>3.首页正中间的文字<br>blog目录下_config.fluid.yml中的text字段。</p>
 <p>如果想使用一言，需打开主题的打字机功能，修改好后如下所示</p>
 <h1 id="一些好玩的功能"><a href="#一些好玩的功能" class="headerlink" title="一些好玩的功能"></a>一些好玩的功能</h1><h1 id="Some-fun-features"><a href="#Some-fun-features" class="headerlink" title="Some fun features"></a>Some fun features</h1><p>fun_features:</p>
 <h1 id="为-subtitle-添加打字机效果"><a href="#为-subtitle-添加打字机效果" class="headerlink" title="为 subtitle 添加打字机效果"></a>为 subtitle 添加打字机效果</h1><h1 id="Typing-animation-for-subtitle"><a href="#Typing-animation-for-subtitle" class="headerlink" title="Typing animation for subtitle"></a>Typing animation for subtitle</h1><p>  typing:<br>    enable: true</p>
 <pre><code class="hljs">然后添加一言，修改好后如下所示：
 
+`
 # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
 # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
 api:
@@ -371,18 +365,18 @@ api:
   # 从请求结果获取字符串的取值字段，最终必须是一个字符串，例如返回结果为 &#123;&quot;data&quot;: &#123;&quot;author&quot;: &quot;fluid&quot;, &quot;content&quot;: &quot;An elegant theme&quot;&#125;&#125;, 则取值字段为 [&#39;data&#39;, &#39;content&#39;]；如果返回是列表则自动选择第一项
   # The value field of the string obtained from the response. For example, the response content is &#123;&quot;data&quot;: &#123;&quot;author&quot;: &quot;fluid&quot;, &quot;content&quot;: &quot;An elegant theme&quot;&#125;&#125;, the expected `keys: [&#39;data&#39;,&#39;content&#39;]`; if the return is a list, the first item is automatically selected
   keys: [&quot;hitokoto&quot;]
+`
 </code></pre>
 <p>至此，一言添加完毕。</p>
-<p>十一.将静态博客挂载到Github Pages<br>方法一：<br>1.安装 hexo-deployer-git，输入以下命令：<br>npm install hexo-deployer-git –save</p>
-<p>2.修改根目录下的 _config.yml，配置 GitHub 相关信息</p>
-<p>deploy:<br>  type: git<br>  repository: <a target="_blank" rel="noopener" href="https://github.com/yaorongke/yaorongke.github.io.git">https://github.com/yaorongke/yaorongke.github.io.git</a><br>  branch: main<br>  token: ghp_3KakcaPHerunNRyMerofcFd9pblU282FSbsY</p>
+<p>十一.将静态博客挂载到Github Pages<br>方法一：<br>1.安装 hexo-deployer-git，输入以下命令：<br><code>npm install hexo-deployer-git --save</code><br>2.修改根目录下的 _config.yml，配置 GitHub 相关信息</p>
+<p>deploy:<br>  type: git<br>  repository: <a target="_blank" rel="noopener" href="https://github.com/XXX/XXX.github.io.git">https://github.com/XXX/XXX.github.io.git</a><br>  branch: main<br>  token: XXXXXXXXXXXXX</p>
 <p>  repository获取方式为：<br>  进入<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a>,<br>  点击右上角三条杠，点击你新建的用户名.github.io的仓库<br>  点击中间那个绿色的Code按钮，选择左边的 Local 下面三个选项里选SSH,复制那个链接即可</p>
 <p>  其中 token 为 GitHub 的 Personal access tokens，获取方式如下图：<br>  token只会出现一次，复制下来妥善保存，如果丢失，则要重新生成。</p>
 <p>  ！<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/2350558a10d94c8ab4959b04771d2bcc.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lhb3JvbmdrZQ==,size_16,color_FFFFFF,t_70">token</a></p>
 <p>&emsp;部署到Github：<br>先输入hexo clean清除缓存<br>再输入命令hexo g -d<br>部署完成后等待两分钟，浏览器访问：https:&#x2F;&#x2F;你的GitHub用户名.github.io<br>能正常访问即部署成功。<br>方法二：直接将blog文件夹内 public 目录中的文件和目录推送至 GitHub 仓库和分支中。（不推荐）</p>
 <p>十二.连接不到Github的解决方法：</p>
 <p>注意：当你在与Github进行ssh通信时候出现超时或者是连接被关闭的情况，可以尝试以下解决方案。</p>
-<p>1.挂代理和换网络<br>2.开源项目Github520<br>通过修改Host文件的方法解决访问速度慢的问题（地址：<a target="_blank" rel="noopener" href="https://github.com/521xueweihan/GitHub520%EF%BC%89">https://github.com/521xueweihan/GitHub520）</a><br>3.连接有效性检验：ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;</a></p>
+<p>1.挂代理和换网络<br>2.开源项目Github520<br>通过修改Host文件的方法解决访问速度慢的问题（地址：<a target="_blank" rel="noopener" href="https://github.com/521xueweihan/GitHub520%EF%BC%89">https://github.com/521xueweihan/GitHub520）</a><br>3.连接有效性检验：ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;</a></p>
 <p>&emsp;结语：到这里，使用Github Pages+Hexo搭建博客的教程结束，明天更新主题的优化和改造，有什么不懂的可以在下面留言，回复的话应该到明天了，明天见！</p>
 <p>​</p>
 
@@ -428,7 +422,7 @@ api:
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年1月28日</div>
+          <div>2024年6月23日</div>
         </div>
       
       
